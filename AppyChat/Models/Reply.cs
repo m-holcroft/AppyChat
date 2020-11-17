@@ -52,5 +52,6 @@ namespace AppyChat.Models
         {
             get; set;
         }
+        public string Id { get; internal set; }
     }
 }
