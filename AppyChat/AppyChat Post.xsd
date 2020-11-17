@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2016 rel. 2 (http://www.altova.com) by Nigel Kibble (Wesupply) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
+	<xs:element name="Post">
+		<xs:annotation>
+			<xs:documentation>Appychat Post construct</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Id" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Unique Id</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Author" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Author Id</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Created" type="xs:dateTime"/>
+				<xs:element name="Text" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>AppyChat Post Text</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Multimedia" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Media links for photos and videos</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Distribution" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>List of recipients of the post. Comprising friends of the Author</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Stats" type="Stats" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Post Statistics</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Comment" type="Comment" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Recipient comments</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Reaction" type="Reaction" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>List of recipient reactions</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Comment">
+		<xs:annotation>
+			<xs:documentation>AppyChat Comment</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Created" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Date/Time comment added</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Author" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Author Id</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Text" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Comment Text</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GIFLink" type="xs:string" minOccurs="0"/>
+			<xs:element name="ReactionCounts" type="ReactionCounts" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Counts of likes, loves, etc</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Reply" type="Reply" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Direct reply to a comment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Reaction" type="Reaction" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>List of recipient reactions</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Reply">
+		<xs:annotation>
+			<xs:documentation>AppyChat Comment response</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Created" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Date/Time comment added</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Author" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Author Id</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Text" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Comment Text</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GIFLink" type="xs:string" minOccurs="0"/>
+			<xs:element name="ReactionCounts" type="ReactionCounts" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Counts of likes, loves, etc</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Reaction" type="Reaction" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>List of recipient reactions</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Stats">
+		<xs:annotation>
+			<xs:documentation>AppyChat Post Statistics</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Shares" type="xs:long" minOccurs="0"/>
+			<xs:element name="ReactionCounts" type="ReactionCounts" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Counts of likes, loves, etc</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ReactionCounts">
+		<xs:annotation>
+			<xs:documentation>AppyChat Post and Comment reaction counts</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Angry" type="xs:long" minOccurs="0"/>
+			<xs:element name="Awesome" type="xs:long" minOccurs="0"/>
+			<xs:element name="Boring" type="xs:long" minOccurs="0"/>
+			<xs:element name="Care" type="xs:long" minOccurs="0"/>
+			<xs:element name="Crazy" type="xs:long" minOccurs="0"/>
+			<xs:element name="FakeNews" type="xs:long" minOccurs="0"/>
+			<xs:element name="Haha" type="xs:long" minOccurs="0"/>
+			<xs:element name="Lame" type="xs:long" minOccurs="0"/>
+			<xs:element name="Legal" type="xs:long" minOccurs="0"/>
+			<xs:element name="Like" type="xs:long" minOccurs="0"/>
+			<xs:element name="Love" type="xs:long" minOccurs="0"/>
+			<xs:element name="Meal" type="xs:long" minOccurs="0"/>
+			<xs:element name="Sad" type="xs:long" minOccurs="0"/>
+			<xs:element name="Scary" type="xs:long" minOccurs="0"/>
+			<xs:element name="Wow" type="xs:long" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Reaction">
+		<xs:annotation>
+			<xs:documentation>AppyChat Post Reaction</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Created" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Date/Time comment added</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Reaction">
+				<xs:annotation>
+					<xs:documentation>Reaction made. See enumeration list</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="ANGRY"/>
+						<xs:enumeration value="AWESOME"/>
+						<xs:enumeration value="CARE"/>
+						<xs:enumeration value="CRAZY"/>
+						<xs:enumeration value="BORING"/>
+						<xs:enumeration value="FAKE_NEWS"/>
+						<xs:enumeration value="HAHA"/>
+						<xs:enumeration value="LAME"/>
+						<xs:enumeration value="LEGAL"/>
+						<xs:enumeration value="LIKE"/>
+						<xs:enumeration value="LOVE"/>
+						<xs:enumeration value="MEAL"/>
+						<xs:enumeration value="SAD"/>
+						<xs:enumeration value="SCARY"/>
+						<xs:enumeration value="WOW"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ReactedBy" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Person who made the reaction</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
