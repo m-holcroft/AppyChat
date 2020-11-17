@@ -29,6 +29,7 @@ namespace AppyChat.Models
         /// <summary>
         /// AppyChat Post Text
         /// </summary>
+        [BsonElement("text")]
         public string Text { get; set; }
 
         /// <summary>

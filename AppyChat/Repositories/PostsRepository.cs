@@ -11,6 +11,7 @@ namespace AppyChat.Repositories
     public class PostRepository
     {
         private readonly IMongoCollection<Post> _posts;
+
         public PostRepository(IAppyChatDatabaseSettings appyChatDatabaseSettings_)
         {
             var client = new MongoClient(appyChatDatabaseSettings_.ConnectionString);
