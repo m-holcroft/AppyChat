@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,28 +12,27 @@ namespace AppyChat.Models
     public class Comment
     {
         /// <summary>
-        /// Unique Id
-        /// </summary>
-        public string Id { get; set; }
-
-        /// <summary>
         /// Date/Time comment added
         /// </summary>
+        [BsonElement("created")]
         public DateTime Created { get; set; }
 
         /// <summary>
         /// Author Id
         /// </summary>
+        [BsonElement("author")]
         public string Author { get; set; }
 
         /// <summary>
         /// Comment Text
         /// </summary>
+        [BsonElement("text")]
         public string Text { get; set; }
 
         /// <summary>
         ///
         /// </summary>
+        [BsonElement("gifLink")]
         public string GIFLink { get; set; }
 
         /// <summary>

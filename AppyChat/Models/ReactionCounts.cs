@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,7 +11,9 @@ namespace AppyChat.Models
     /// </summary>
     public class ReactionCounts
     {
+        [BsonElement("angry")]
         public long Angry { get; set; }
+
         public long Awesome { get; set; }
         public long Boring { get; set; }
         public long Care { get; set; }

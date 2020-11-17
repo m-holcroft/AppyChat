@@ -13,14 +13,14 @@ namespace AppyChat.Tests
     [TestFixture]
     internal class PostRepositoryTests
     {
-        private PostRepository postRepository_;
+        private AppyChatRepository postRepository_;
         private IAppyChatDatabaseSettings appyChatDatabaseSettings_;
 
         [SetUp]
         public void Setup()
         {
-            appyChatDatabaseSettings_ = new AppyChatDatabaseSettings() { ConnectionString = "mongodb://localhost:27017", DatabaseName = "AppyChatDb", PostsCollectionName= "Posts" };
-            postRepository_ = new PostRepository(appyChatDatabaseSettings_);
+            appyChatDatabaseSettings_ = new AppyChatDatabaseSettings() { ConnectionString = "mongodb://localhost:27017", DatabaseName = "AppyChatDb", AppyChatCollectionName= "Posts" };
+            postRepository_ = new AppyChatRepository(appyChatDatabaseSettings_);
         }
 
         [Test]
@@ -31,7 +31,7 @@ namespace AppyChat.Tests
             var database = client.GetDatabase(appyChatDatabaseSettings_.DatabaseName);
 
             //  Execute Tests
-            var collection = database.GetCollection<Post>(appyChatDatabaseSettings_.PostsCollectionName);
+            var collection = database.GetCollection<Post>(appyChatDatabaseSettings_.AppyChatCollectionName);
 
             //  Assert Results
             Assert.IsNotNull(collection);

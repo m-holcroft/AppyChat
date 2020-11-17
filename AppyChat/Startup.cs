@@ -28,7 +28,7 @@ namespace AppyChat
             services.AddSingleton<IAppyChatDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<AppyChatDatabaseSettings>>().Value);
 
-            services.AddSingleton<PostRepository>();
+            services.AddSingleton<AppyChatRepository>();
 
             services.AddControllers().AddNewtonsoftJson(options => options.UseMemberCasing());
 

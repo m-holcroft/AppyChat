@@ -22,6 +22,8 @@ namespace AppyChat.Models
         /// <summary>
         /// Author Id
         /// </summary>
+        ///
+        [BsonElement("author")]
         public string Author { get; set; }
 
         public DateTime Created { get; set; }
@@ -35,21 +37,27 @@ namespace AppyChat.Models
         /// <summary>
         /// Media links for photos and videos
         /// </summary>
+        ///
+        [BsonElement("multimedia")]
         public string Multimedia { get; set; }
 
         /// <summary>
         /// Post Statistics
         /// </summary>
+        [BsonElement("stats")]
         public Stats Stats { get; set; }
 
         /// <summary>
         /// Recipient comments
         /// </summary>
-        public List<Comment> Comment { get; set; }
+        ///
+        [BsonElement("comments")]
+        public List<Comment> Comments { get; set; }
 
         /// <summary>
         /// List of recipient reactions
         /// </summary>
-        public List<Reaction> Reaction { get; set; }
+        [BsonElement("reactions")]
+        public List<Reaction> Reactions { get; set; }
     }
 }
