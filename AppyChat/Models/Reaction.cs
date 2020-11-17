@@ -24,5 +24,7 @@ namespace AppyChat.Models
         /// Person who made the reaction
         /// </summary>
         public string ReactedBy { get; set; }
+
+        public string Id { get; set; }
     }
 }
