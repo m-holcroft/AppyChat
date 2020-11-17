@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AppyChat.Models
 {
@@ -10,32 +8,12 @@ namespace AppyChat.Models
     /// </summary>
     public partial class Reply
     {
-
-        private System.DateTime createdField;
-
-        private string authorField;
-
-        private string textField;
-
-        private string gIFLinkField;
-
-        private ReactionCounts reactionCountsField;
-
-        private List<Reaction> reactionField;
-
         /// <summary>
         /// Date/Time comment added
         /// </summary>
-        public System.DateTime Created
+        public DateTime Created
         {
-            get
-            {
-                return this.createdField;
-            }
-            set
-            {
-                this.createdField = value;
-            }
+            get; set;
         }
 
         /// <summary>
@@ -43,14 +21,7 @@ namespace AppyChat.Models
         /// </summary>
         public string Author
         {
-            get
-            {
-                return this.authorField;
-            }
-            set
-            {
-                this.authorField = value;
-            }
+            get; set;
         }
 
         /// <summary>
@@ -58,26 +29,12 @@ namespace AppyChat.Models
         /// </summary>
         public string Text
         {
-            get
-            {
-                return this.textField;
-            }
-            set
-            {
-                this.textField = value;
-            }
+            get; set;
         }
 
         public string GIFLink
         {
-            get
-            {
-                return this.gIFLinkField;
-            }
-            set
-            {
-                this.gIFLinkField = value;
-            }
+            get; set;
         }
 
         /// <summary>
@@ -85,14 +42,7 @@ namespace AppyChat.Models
         /// </summary>
         public ReactionCounts ReactionCounts
         {
-            get
-            {
-                return this.reactionCountsField;
-            }
-            set
-            {
-                this.reactionCountsField = value;
-            }
+            get; set;
         }
 
         /// <summary>
@@ -100,14 +50,7 @@ namespace AppyChat.Models
         /// </summary>
         public List<Reaction> Reactions
         {
-            get
-            {
-                return this.reactionField;
-            }
-            set
-            {
-                this.reactionField = value;
-            }
+            get; set;
         }
     }
 }

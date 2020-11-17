@@ -7,156 +7,48 @@ using System.Threading.Tasks;
 
 namespace AppyChat.Models
 {
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
+    /// <summary>
+    /// Appychat Post construct
+    /// </summary>
     public partial class Post
     {
-
-        private string idField;
-
-        private string authorField;
-
-        private System.DateTime createdField;
-
-        private string textField;
-
-        private string[] multimediaField;
-
-        private string[] distributionField;
-
-        private Stats statsField;
-
-        private Comment[] commentField;
-
-        private Reaction[] reactionField;
-
-        /// <remarks/>
-
+        /// <summary>
+        /// Unique Id
+        /// </summary>
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
+        public string Id { get; set; }
 
-        /// <remarks/>
-        public string Author
-        {
-            get
-            {
-                return this.authorField;
-            }
-            set
-            {
-                this.authorField = value;
-            }
-        }
+        /// <summary>
+        /// Author Id
+        /// </summary>
+        public string Author { get; set; }
 
-        /// <remarks/>
-        public System.DateTime Created
-        {
-            get
-            {
-                return this.createdField;
-            }
-            set
-            {
-                this.createdField = value;
-            }
-        }
+        public DateTime Created { get; set; }
 
-        [BsonElement("text")]
-        /// <remarks/>
-        public string Text
-        {
-            get
-            {
-                return this.textField;
-            }
-            set
-            {
-                this.textField = value;
-            }
-        }
+        /// <summary>
+        /// AppyChat Post Text
+        /// </summary>
+        public string Text { get; set; }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Multimedia")]
-        public string[] Multimedia
-        {
-            get
-            {
-                return this.multimediaField;
-            }
-            set
-            {
-                this.multimediaField = value;
-            }
-        }
+        /// <summary>
+        /// Media links for photos and videos
+        /// </summary>
+        public string Multimedia { get; set; }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Distribution")]
-        public string[] Distribution
-        {
-            get
-            {
-                return this.distributionField;
-            }
-            set
-            {
-                this.distributionField = value;
-            }
-        }
+        /// <summary>
+        /// Post Statistics
+        /// </summary>
+        public Stats Stats { get; set; }
 
-        /// <remarks/>
-        public Stats Stats
-        {
-            get
-            {
-                return this.statsField;
-            }
-            set
-            {
-                this.statsField = value;
-            }
-        }
+        /// <summary>
+        /// Recipient comments
+        /// </summary>
+        public List<Comment> Comment { get; set; }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Comment")]
-        public Comment[] Comment
-        {
-            get
-            {
-                return this.commentField;
-            }
-            set
-            {
-                this.commentField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Reaction")]
-        public Reaction[] Reaction
-        {
-            get
-            {
-                return this.reactionField;
-            }
-            set
-            {
-                this.reactionField = value;
-            }
-        }
+        /// <summary>
+        /// List of recipient reactions
+        /// </summary>
+        public List<Reaction> Reaction { get; set; }
     }
 }

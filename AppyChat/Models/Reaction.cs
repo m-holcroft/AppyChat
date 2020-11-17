@@ -5,58 +5,24 @@ using System.Threading.Tasks;
 
 namespace AppyChat.Models
 {
+    /// <summary>
+    /// AppyChat Post Reaction
+    /// </summary>
     public class Reaction
     {
-
-        private System.DateTime createdField;
-
-        private Enums.Reaction reaction1Field;
-
-        private string reactedByField;
-
         /// <summary>
         /// Date/Time comment added
         /// </summary>
-        public System.DateTime Created
-        {
-            get
-            {
-                return this.createdField;
-            }
-            set
-            {
-                this.createdField = value;
-            }
-        }
+        public DateTime Created { get; set; }
 
         /// <summary>
         /// Reaction made. See enumeration list
         /// </summary>
-        public Enums.Reaction ReactionType
-        {
-            get
-            {
-                return this.reaction1Field;
-            }
-            set
-            {
-                this.reaction1Field = value;
-            }
-        }
+        public Enums.Reaction ReactionType { get; set; }
 
         /// <summary>
         /// Person who made the reaction
         /// </summary>
-        public string ReactedBy
-        {
-            get
-            {
-                return this.reactedByField;
-            }
-            set
-            {
-                this.reactedByField = value;
-            }
-        }
+        public string ReactedBy { get; set; }
     }
 }
